@@ -16,6 +16,7 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    // User Pictures?
     username: {
       type: DataTypes.STRING,
       allowNull: false,
