@@ -1,14 +1,21 @@
 const User = require('./User');
-const FoodItem = require('./FoodItem');
+const Comments = require('./Comments');
+const Images = require('./Comments');
 
 // Create associations
-User.hasMany(FoodItem, {
+User.hasMany(Comments, {
   onDelete: 'CASCADE',
   foreignKey: 'id',
 });
 
-FoodItem.belongsTo(FoodItem, {
+
+Comments.belongsTo(Comments, {
   foreignKey: 'id'
 });
 
-module.exports = { User, FoodItem };
+User.hasMany(Images, {
+  onDelete: 'CASCADE',
+  foreignKey: 'id'
+});
+
+module.exports = { User, Comments, Images  };

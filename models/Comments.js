@@ -1,16 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class FoodItem extends Model {}
+class Comments extends Model {}
 
-FoodItem.init(
+Comments.init(
   {
-    name: {
-      type: DataTypes.STRING(100),
-      allowNull: false
-    },
-    quantity: {
-      type: DataTypes.STRING(40),
+    comment_content: {
+      type: DataTypes.STRING,
       allowNull: false
     },
     user_id: {
@@ -25,8 +21,8 @@ FoodItem.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'food_item',
+    modelName: 'comments',
   }
 );
 
-module.exports = FoodItem;
+module.exports = Comments;
