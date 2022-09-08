@@ -1,11 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Images extends Model {}
+class Image extends Model {}
 //work on image model with cloudinary link 
-Images.init(
+Image.init(
   {
     image_id: {
+      type: DataType.STRING,
+      allowNull: false
+    },
+    // points to cloudinary URL hosting image
+    file_name: {
       type: DataType.STRING,
       allowNull: false
     },
@@ -21,8 +26,8 @@ Images.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'images',
+    modelName: 'image',
   }
 );
 
-module.exports = Images;
+module.exports = Image;
