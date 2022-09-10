@@ -10,7 +10,7 @@ Image.init(
       autoIncrement: true,
       primaryKey: true,
     },
-    // points to cloudinary URL hosting image
+    // points to cloudinary image URL
     file_name: {
       type: DataType.STRING,
       allowNull: false

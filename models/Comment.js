@@ -6,7 +6,7 @@ class Comment extends Model {}
 Comment.init(
   {
     id: {
-      type: DataType.INTEGER, 
+      type: DataType.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },
@@ -33,7 +33,7 @@ Comment.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment'
+    modelName: 'comment',
   }
 );
 
