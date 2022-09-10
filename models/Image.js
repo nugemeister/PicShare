@@ -11,6 +11,10 @@ Image.init(
       primaryKey: true,
     },
     // points to cloudinary image URL
+    title: {
+      type: DataTypes.STRING,
+      allowNull:false 
+    },
     file_name: {
       type: DataTypes.STRING,
       allowNull: false
