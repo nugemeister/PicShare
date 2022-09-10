@@ -1,8 +1,9 @@
 const sequelize = require('../config/connection');
-const { User, FoodItem } = require('../models');
+const { User, Image, Comment } = require('../models');
 
 const userData = require('./userData.json');
-const foodItemData = require('./foodItemData.json');
+// const imageData = require('./imageData.json');
+// const commentData = require('./commentData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -12,10 +13,15 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  await FoodItem.bulkCreate(foodItemData, {
-    individualHooks: true,
-    returning: true,
-  });
+  // await Image.bulkCreate(imageData, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
+  
+  // await Comment.bulkCreate(commentData, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
 
   process.exit(0);
 };
