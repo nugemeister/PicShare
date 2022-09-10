@@ -1,6 +1,6 @@
 const User = require('./User');
 const Comment = require('./Comment');
-const Image = require('./Comment');
+const Image = require('./Image');
 
 // Create associations
 User.hasMany(Comment, {
