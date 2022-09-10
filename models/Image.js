@@ -5,9 +5,10 @@ class Image extends Model {}
 //work on image model with cloudinary link 
 Image.init(
   {
-    image_id: {
-      type: DataType.STRING,
-      allowNull: false
+   id: {
+      type: DataType.INTEGER, 
+      autoIncrement: true,
+      primaryKey: true,
     },
     // points to cloudinary URL hosting image
     file_name: {

@@ -1,6 +1,6 @@
 const User = require('./User');
 const Comment = require('./Comment');
-const Image = require('./Comment');
+const Image = require('./Image');
 
 // Create associations
 User.hasMany(Comment, {
@@ -9,7 +9,7 @@ User.hasMany(Comment, {
 });
 
 
-Comment.belongsTo(Comment, {
+Comment.belongsTo(Image, {
   foreignKey: 'id'
 });
 
@@ -17,5 +17,10 @@ User.hasMany(Image, {
   onDelete: 'CASCADE',
   foreignKey: 'id'
 });
+
+Image.belongsTo(User, {
+  foreignKey: 'id'
+});
+
 
 module.exports = { User, Comment, Image  };
