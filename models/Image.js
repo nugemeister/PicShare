@@ -6,13 +6,13 @@ class Image extends Model {}
 Image.init(
   {
    id: {
-      type: DataType.INTEGER, 
+      type: DataTypes.INTEGER, 
       autoIncrement: true,
       primaryKey: true,
     },
     // points to cloudinary image URL
     file_name: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     user_id: {

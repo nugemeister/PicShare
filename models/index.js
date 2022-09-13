@@ -30,5 +30,4 @@ Comment.belongsTo(Image, {
   foreignKey: 'id'
 });
 
-
 module.exports = { User, Comment, Image  };
