@@ -2,49 +2,50 @@ const { Image } = require('../models');
 
 const imageData = [
   {
-    title: 'Blossoming Apricot',
+    title: '../public/images/city-pic.jpg',
     user_id: 1,
-    filename: 'city-pic.jpg',
+    file_name: 'city-pic.jpg',
+    
   },
   {
-    title: 'Cosmos Flowers',
+    title: '../public/images/forest-pic.jpg',
     user_id: 1,
-    filename: 'forest-pic.jpg',
+    file_name: 'forest-pic.jpg',
   },
   {
-    title: 'Sand + Sea = Summer',
+    title: '../public/images/mountain-dog.jpg',
     user_id: 2,
-    filename: 'mountain-dog.jpg',
+    file_name: 'mountain-dog.jpg',
   },
   {
-    title: 'Beach Chairs',
+    title: '../public/images/nice-pic.jpg',
     user_id: 2,
-    filename: 'nice-pic.jpg',
+    file_name: 'nice-pic.jpg',
   },
   {
-    title: 'Beach Sunrise',
+    title: '../public/images/sunflower-pic.jpg',
     user_id: 2,
-    filename: 'sunflower-pic.jpg',
+    file_name: 'sunflower-pic.jpg',
   },
   {
-    title: 'Fall Colors',
+    title: '../public/images/water-pic.jpg',
     user_id: 3,
-    filename: 'water-pic.jpg',
+    file_name: 'water-pic.jpg',
   },
   {
-    title: 'Autumn Mountains',
+    title: '../public/images/sunset-pic.jpg',
     user_id: 3,
-    filename: 'sunset-pic.jpg',
+    file_name: 'sunset-pic.jpg',
   },
   {
-    title: 'Frozen River',
+    title: '../public/images/tree-pic.jpg',
     user_id: 4,
-    filename: 'tree-pic.jpg',
+    file_name: 'tree-pic.jpg',
   },
   {
-    title: 'Winter Home',
+    title: '../public/images/wut-pic.jpg',
     user_id: 5,
-    filename: 'wut-pic.jpg',
+    file_name: 'wut-pic.jpg',
   },
 ];
 
