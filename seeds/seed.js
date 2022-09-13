@@ -3,8 +3,7 @@ const { User, Image, Comment } = require('../models');
 
 const userData = require('./userData.json');
 const imageData = require('./imageData.js');
-// const seedImage = require('./imageData.js');
-// const commentData = require('./commentData.json');
+const commentData = require('./commentData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -21,10 +20,10 @@ const seedDatabase = async () => {
   //   returning: true,
   // });
   
-  // await Comment.bulkCreate(commentData, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
+  await Comment.bulkCreate(commentData, {
+    individualHooks: true,
+    returning: true,
+  });
 
   process.exit(0);
 };
