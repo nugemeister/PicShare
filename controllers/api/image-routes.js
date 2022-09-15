@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const { User, Image, Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
+const {withAuth, withAuthApi } = require('../../utils/auth');
 
 
 
 //create new image
-router.post('/', withAuth, async (req, res) => {
+router.post('/', withAuthApi, async (req, res) => {
     try {
-      const imageData = await Image.create({...req.body, userId: req.session.userId});
+      const imageData = await Image.create({...req.body, user_id: req.session.user_id});
       res.status(200).json(imageData);
     } catch (err) {
       res.status(400).json(err);
