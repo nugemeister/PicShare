@@ -14,6 +14,9 @@
     {{#if logged_in}}
   <nav class = "ml-auto">
     <button class = "btn border-solid border-2 border-white rounded p-1 text-sm" id="logout">Log Out</button>
+    {{else}}
+    <button class = "btn border-solid border-2 border-white rounded p-1 text-sm" id="login">Log In</button>
+
   </nav>
     {{/if}}
 </header>
@@ -25,7 +28,9 @@
       
   </footer>
 
+  <script src="/js/login.js"></script>
   <script src="/js/logout.js"></script>
+  <script src="/js/image.js"></script>
   
 </body>
 
