@@ -11,8 +11,15 @@ Image.init(
       primaryKey: true,
     },
     // points to cloudinary image URL
+    title: {
+      type: DataTypes.STRING,
+      allowNull:false 
+    },
     file_name: {
       type: DataTypes.STRING,
+
+      defaultValue: '../public/images/',
+
       allowNull: false
     },
     user_id: {
