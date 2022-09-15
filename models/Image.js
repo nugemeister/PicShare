@@ -17,7 +17,9 @@ Image.init(
     },
     file_name: {
       type: DataTypes.STRING,
+
       defaultValue: '../public/images/',
+
       allowNull: false
     },
     user_id: {
