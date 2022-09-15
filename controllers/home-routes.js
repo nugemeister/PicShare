@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../models');
-const withAuth = require('../utils/auth');
+const {withAuth, withAuthApi } = require('../utils/auth');
 
 
 
@@ -33,13 +33,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+
+
 module.exports = router;
 
-
-// Route "/dashboard"
-
-// Route "/dashboard/new"
-
-// Route "/dashboard/edit/:id"
-
-// Route "/post/:id"
