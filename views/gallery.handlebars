@@ -74,9 +74,9 @@
     <h1 class="text-2xl text-center font-bold text-slate-800">Your Gallery:</h1>
       <div class = "grid sm: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto p-12">
         
-        {{#each image}}
+        {{#each images as |image| }}
         <div class = "bg-white flex justify-center border-solid rounded p-5 hover:bg-indigo-100">
-          <img src={{title}} alt={{file-name}}>
+          <img src="{{image.file_name}}" alt="{{image.title}}">
         </div>
         {{/each}}
 
