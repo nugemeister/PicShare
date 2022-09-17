@@ -84,8 +84,8 @@
           <img src="{{image.file_name}}" alt="{{image.title}}" class="object-contain max-h-80">
           <a href="/image/{{image.id}}" class="btn border-solid border-2 border-white rounded p-1 text-sm bg-blue-600 text-white">View Post</a>
           {{!-- TODO: Add a Delete 'X' icon to thumbnails when mouse hovered, deletes a photo after alerting the user if they want to proceed --}}
+      <button onclick="deleteImageHandler({{image.id}})"type="delete" id="image-delete" data-imageclass="delete-button" class="border-solid border-2 border-white rounded p-1 text-sm bg-red-600 text-white">Delete</button>
         </div>
-      <button onclick="deleteImageHandler({{image.id}})"type="delete" id="image-delete" data-imageclass="delete-button">Delete</button>
         {{/each}}
 {{!-- Link script for image deletion --}}
       </div>
