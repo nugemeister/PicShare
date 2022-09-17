@@ -79,7 +79,7 @@
        <div class = "bg-white flex flex-col justify-center text-center border-solid rounded p-5 hover:bg-indigo-100">
           {{!-- Wrap in <a></a> tag, link to image post --}}
           
-          <img src="{{image.file_name}}" alt="{{image.title}}" class="max-h-96">
+          <img src="{{image.file_name}}" alt="{{image.title}}" class="object-contain max-h-80">
           <a href="/image/{{image.id}}" class="btn border-solid border-2 border-white rounded p-1 text-sm bg-blue-600 text-white">View Post</a>
           {{!-- TODO: Add a Delete 'X' icon to thumbnails when mouse hovered, deletes a photo after alerting the user if they want to proceed --}}
         </div>
