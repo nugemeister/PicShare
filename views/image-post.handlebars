@@ -1,10 +1,55 @@
-{{!-- Header --}}
-    {{!-- Links to Gallery & Log Out in navbar --}}
+
 
 {{!-- Image / container div --}}
-    {{!-- Direct link to image w/ copy to clipboard button --}}
 
-{{!-- Comments container div --}}
-    {{!-- Post new comment form --}}
-    {{!-- Comments on post --}}
-        {{!-- Sort comments by oldest / newest? --}}
+<div class="container mx-auto px-4">
+    <div class = "bg-white flex justify-center border-solid rounded p-5 hover:bg-indigo-100">
+          {{!-- Wrap in <a></a> tag, link to image post --}}
+          <img src="{{image.file_name}}" alt="{{image.title}}" id="images" data-id="{{image.id}}">
+          {{!-- TODO: Add a Delete 'X' icon to thumbnails when mouse hovered, deletes a photo after alerting the user if they want to proceed --}}
+    </div>
+    {{!-- Comment container div --}}
+    <div class="overscroll-none ...">
+         {{#each image.comments as |comment| }}
+        <div class="card m-6">
+            <header class="card-header has-background-primary">
+                <p class="card-header-title">
+                comment
+                 </p>
+            </header>
+                <div class="card-content has-background-grey-lighter">
+                <div class="content">
+                    {{comment_content}}
+                    <br>
+                    <br>
+                    <time datetime="2016-1-1">- </time>
+                </div>
+                </div>
+        </div>
+        {{/each}}
+    </div>
+
+{{#if logged_in}}
+<form id="new-comment-form" class="card">
+    <div class="card-header">
+      <h3>Add New Comment</h3>
+    </div>
+
+    <div class="flex">
+    
+
+      <label class="form-label" for="comment-body"></label>
+
+      <textarea name="comment-body" class="resize rounded-md" id="comment-content" ></textarea>
+
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full submit">
+        submit
+     </button>
+    </div>
+  </form>
+</div>
+
+ <script src="/js/comment.js"></script>
+{{/if}}
+
+</div>
