@@ -38,7 +38,7 @@ router.post('/', withAuthApi, async (req, res) => {
   //delete image 
   router.delete('/:id', withAuth, async (req,res) => {
     try {
-      const imageData = await Image.destroy(req.body, {
+      const imageData = await Image.destroy({
         where: {
           id: req.params.id
         }
@@ -51,6 +51,7 @@ router.post('/', withAuthApi, async (req, res) => {
   
       res.status(200).json(imageData);
     } catch (err) {
+      console.error(err);
       res.status(500).json(err.message);
     }
   });

@@ -45,7 +45,7 @@ router.get('/gallery', withAuth, async (req, res) => {
 
 
 //Image post Route
-router.get('/post/:id', async (req, res) => {
+router.get('/image/:id', withAuth, async (req, res) => {
   Image.findByPk(req.params.id, {
        include: [
        User,
@@ -65,7 +65,7 @@ router.get('/post/:id', async (req, res) => {
          console.log(image)
  
          res.render("image-post", { 
-           post,
+           image,
            logged_in: req.session.logged_in });
        } else {
          res.status(404).end();
