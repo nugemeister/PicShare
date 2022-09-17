@@ -14,8 +14,9 @@
   <a class = "text-2xl font-bold" href="/">📸 PicShare</a>
   <nav class = "ml-auto"></nav>
   <a class="navbar-item" href="/gallery">Gallery</a>
+
     {{#if logged_in}}
-  <nav class = "ml-auto">
+  <a class="border-solid border-2 border-white rounded p-1 text-s" href="/gallery">Gallery</a>
     <button class = "btn border-solid border-2 border-white rounded p-1 text-sm" id="logout">Log Out</button>
     {{else}}
     <a class="btn border-solid border-2 border-white rounded p-1 text-sm" id="login" href="/login">
