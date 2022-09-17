@@ -38,6 +38,7 @@ const signupFormHandler = async (event) => {
     } else {
       alert('Failed to sign up.');
     }
+    console.log("Successful signup!");
   }
 };
 
