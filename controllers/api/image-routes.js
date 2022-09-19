@@ -14,26 +14,26 @@ router.post('/', withAuthApi, async (req, res) => {
     }
   });
 
-  //edit image
-  router.put('/:id', withAuth, async (req, res) => {
-    // edit post by its `id` value
-    try {
-      const imageData = await Image.update(req.body,{
-        where: {
-          id: req.params.id
-        }
-      });
+  // //FOR FUTURE DEVELOPMENT: edit image
+  // router.put('/:id', withAuth, async (req, res) => {
+  //   // edit post by its `id` value
+  //   try {
+  //     const imageData = await Image.update(req.body,{
+  //       where: {
+  //         id: req.params.id
+  //       }
+  //     });
   
-      if (!imageData) {
-        res.status(404).json({ message: 'No image found with this id!' });
-        return;
-      }
+  //     if (!imageData) {
+  //       res.status(404).json({ message: 'No image found with this id!' });
+  //       return;
+  //     }
   
-      res.status(200).json(imageData);
-    } catch (err) {
-      res.status(500).json(err.message);
-    }
-  });
+  //     res.status(200).json(imageData);
+  //   } catch (err) {
+  //     res.status(500).json(err.message);
+  //   }
+  // });
 
   //delete image 
   router.delete('/:id', withAuth, async (req,res) => {
