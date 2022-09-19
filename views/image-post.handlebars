@@ -9,12 +9,12 @@
           {{!-- TODO: Add a Delete 'X' icon to thumbnails when mouse hovered, deletes a photo after alerting the user if they want to proceed --}}
     </div>
     {{!-- Comment container div --}}
-    <div class="overscroll-none ...">
+    <div class="h-52 overflow-y-scroll">
          {{#each image.comments as |comment| }}
         <div class="card m-6">
             <header class="card-header has-background-primary">
                 <p class="card-header-title">
-                comment
+               {{format_date comment.createdAt}}
                  </p>
             </header>
                 <div class="card-content has-background-grey-lighter">
@@ -32,7 +32,7 @@
 {{#if logged_in}}
 <form id="new-comment-form" class="card">
     <div class="card-header">
-      <h3>Add New Comment</h3>
+      <h3>Add New Comment:</h3>
     </div>
 
     <div class="flex">
