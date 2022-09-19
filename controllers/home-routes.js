@@ -56,7 +56,7 @@ router.get('/image/:id', withAuth, async (req, res) => {
          {
            model: Comment,
            include: {
-             model: User
+              model: User
            }
          },
          

@@ -1,55 +1,57 @@
-
-
 {{!-- Image / container div --}}
 
-<div class="container mx-auto px-4">
-    <div class = "bg-white flex justify-center border-solid rounded p-5 hover:bg-indigo-100">
-          {{!-- Wrap in <a></a> tag, link to image post --}}
-          <img src="{{image.file_name}}" alt="{{image.title}}" id="images" data-id="{{image.id}}">
-          {{!-- TODO: Add a Delete 'X' icon to thumbnails when mouse hovered, deletes a photo after alerting the user if they want to proceed --}}
-    </div>
-    {{!-- Comment container div --}}
-    <div class="h-52 overflow-y-scroll">
-         {{#each image.comments as |comment| }}
-        <div class="card m-6">
-            <header class="card-header has-background-primary">
-                <p class="card-header-title">
-               {{format_date comment.createdAt}}
-                 </p>
-            </header>
-                <div class="card-content has-background-grey-lighter">
-                <div class="content">
-                    {{comment_content}}
-                    <br>
-                    <br>
-                    <time datetime="2016-1-1">- </time>
-                </div>
-                </div>
+<div class="container bg-slate-300 rounded mx-auto p-5 ">
+    <div class="rounded m-auto	margin: auto">
+        <div
+            class="bg-white border-solid rounded p-5 hover:bg-indigo-100 my-5 max-w-4xl max-h-40px mt-4 rounded m-auto	margin: auto">
+            {{!-- Wrap in <a></a> tag, link to image post --}}
+            <img src="{{image.file_name}}" alt="{{image.title}}" id="images" data-id="{{image.id}}">
+            {{!-- TODO: Add a Delete 'X' icon to thumbnails when mouse hovered, deletes a photo after alerting the user
+            if they want to proceed --}}
         </div>
-        {{/each}}
+        {{!-- Comment container div --}}
+      {{#if image.comments}}
+        <div class="h-52 overflow-y-scroll bg-white border-4  rounded max-w-4xl mb-3 rounded m-auto	margin: auto">
+        
+        {{#each image.comments as |comment| }}
+            <div class="card m-6">
+                <header class="card-header has-background-primary">
+                    <p class="card-header-title">
+                        {{format_date comment.createdAt}}
+                    </p>
+                </header>
+                <div class="card-content has-background-grey-lighter">
+                    <div class="content bg-indigo-400 rounded p-2">
+                        {{comment_content}}
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        {{#if logged_in}}
+        <div class="border-solid rounded text-center m-auto margin: auto card">
+            <form class="border-solid rounded m-auto margin: auto card " id="new-comment-form">
+                <div class="card-header">
+                    <h3>Add New Comment:</h3>
+                </div>
+
+
+                <label class="form-label" for="comment-body"></label>
+
+                <textarea name="comment-body" class="resize rounded-md block m-auto margin: auto card w-3/5" rows="5"  id="comment-content"></textarea>
+
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full submit block m-auto margin: auto card mt-4">
+                    Submit
+                </button>
+            </form>
+        </div>
     </div>
 
-{{#if logged_in}}
-<form id="new-comment-form" class="card">
-    <div class="card-header">
-      <h3>Add New Comment:</h3>
-    </div>
-
-    <div class="flex">
-    
-
-      <label class="form-label" for="comment-body"></label>
-
-      <textarea name="comment-body" class="resize rounded-md" id="comment-content" ></textarea>
-
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full submit">
-        submit
-     </button>
-    </div>
-  </form>
-</div>
-
- <script src="/js/comment.js"></script>
-{{/if}}
+    <script src="/js/comment.js"></script>
+    {{/if}}
 
 </div>
